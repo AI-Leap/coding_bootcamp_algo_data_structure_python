@@ -1,17 +1,24 @@
-def binary_search(list,item):
+def binary_search(my_list,item):
+  '''
+  my_list: the input list
+  item: the number to be searched
+  Takes in my_list and item as parameters
+  If the item is found, returns the index number
+  If the item is not found, return None
+  '''
   low = 0
-  high = len(list)-1
+  high = len(my_list)-1
   while low <= high:
-    mid = int((low + high)/2)
-    guess = list[mid]
-    if guess == item:
+    mid = round((low + high)/2)
+    name = my_list[mid]
+    if name == item:
       return mid
-    if guess > item:
+    if name > item:
       high = mid-1
     else:
       low = mid+1
   return None
 
-list = [2,4,6,8,10]
-print(binary_search(list, 6))
-print(binary_search(list, 7))
+my_list = [2,4,6,8,10]
+print(binary_search(my_list, 6))
+print(binary_search(my_list, 7))
